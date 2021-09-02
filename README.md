@@ -1,44 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Initialize project
 
-## Available Scripts
+ `npm start`
 
-In the project directory, you can run:
+### Cleaning process
 
-### `npm start`
+### import libraries
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-material-ui/core, axios, firebase, react-router-dom, react-uuid, styled-components
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### App.js - initial layout
 
-### `npm test`
+-We create the routes
+login or app conditional on the existence of a user
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Styles
 
-### `npm run build`
+-We use useStyles to create an infrastructure that allows us to assign styles to each of the components.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Create the component folders: Pages
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+-We create the basic infra-structure of the components that represent a page: home, login, PayPal, profile, signUp
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Styles in page components
 
-### `npm run eject`
+-pattern to add the infrastructure to all page components: Banner, Header, Plans and Rows.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Create the component folder
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-We create the basic infra-structure of of the rest of the components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Wtyles of the components of the cap components
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### We started working on the Header component
 
-## Learn More
+-Import the logo
+-We add a class to the appbar a conditional transparent class, this class is activated if the variable show is true,
+-The variable show is activated if the vertical scroll is greater than 100px.
+-To listen when the user scrolls vertically, we add an eventListenner to the window object.
+-The eventListener is active only once each time we refresh the page.
+-Once the component is assembled, it is necessary to clean it so that it does not remain buggy.
+-We add the paths to both the logo and the avatar, with the useHistory.
+-The Toolbar has been added css so that the items are separated.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### We start working on the banner
+
+-We have imported an image as a backgrpundImage.
+-In React, we have to accompany the backgrpundImages with styles like: object-fit, background-size and background-position. To have the image square.
+- We have positioned the title of the pili, some buttons and the description.
+-As the description comes from the Api we have to truncate it to make sure that it fits. for it, we have declared the function truncate.
+- We have added an empty div, which darkens the image until it merges with the rest of the UI, which is dark.
+
+### We start working on the Login
+
+-We have created a button with styled components and named it netflixButton. This button is fully customizable and we can vary its length, color and other styles by passing props to it.
+- Styled components to vary the styles of the input or the button, but its          positioning, we give it a normal class.
+-We have inserted a background image for the login.
+-We have also put the logo with position.
+
+-We have created a custom input in styled component and named it NetflixInput. As inputBase was a Ui material component, we called it styled(inputBase). If it had been a base input styled.input.
