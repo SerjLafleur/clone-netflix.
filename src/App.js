@@ -10,7 +10,7 @@ import SignUp from './Pages/SignUp';
 
 
 function App() {
-  const user = null
+  const user = 'sergio'
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -35,7 +35,7 @@ function App() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: "#111",
+    backgroundColor: "#111",
     minHeight: "100vh"
   },
 }))

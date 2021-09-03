@@ -59,3 +59,18 @@ login or app conditional on the existence of a user
 -We have also put the logo with position.
 
 -We have created a custom input in styled component and named it NetflixInput. As inputBase was a Ui material component, we called it styled(inputBase). If it had been a base input styled.input.
+
+### Component profile
+
+-We have worked on the distribution.
+-We have passed to the plans we have passed children from profile.
+-we have set the avatar, the evil and the buttons of the plans from plans.
+-Passing props to styled composites.
+
+
+### Component plans
+
+-We have put the text and botoenes of subscribers and props from profile.
+
+
+
