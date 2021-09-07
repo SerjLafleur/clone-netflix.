@@ -71,6 +71,12 @@ login or app conditional on the existence of a user
 ### Component plans
 
 -We have put the text and botoenes of subscribers and props from profile.
+-Pass props to the styled components.
+-In case the component is not binary, i.e. the size will be small, large or medium, then we solve it with a function and a switch.
 
+### Component Sign Up
 
-
+-We have made a conditional rendering.
+-We have created a variable singIn.
+-If the variable is false, we display the form. 
+- We have styled the component.

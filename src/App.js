@@ -10,7 +10,7 @@ import SignUp from './Pages/SignUp';
 
 
 function App() {
-  const user = 'sergio'
+  const user = null
   const classes = useStyles()
   return (
     <div className={classes.root}>

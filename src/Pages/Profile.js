@@ -19,8 +19,8 @@ const Profile = () => {
                         <Typography variant='h5' gutterBottom className={classes.plansText}>Plans</Typography>
                         <Plans cost={7.99}>Netflix Standard</Plans>
                         <Plans cost={11.99}>Netflix Basic</Plans>
-                        <Plans cost={15.99}>Netflix Premium</Plans>
-                        <NetflixButton>Sign Out</NetflixButton>
+                        <Plans wide='medium' color='gray' cost={15.99}>Netflix Premium</Plans>
+                        <NetflixButton wide='fulWidth'>Sign Out</NetflixButton>
                     </div>
                 </div>
             </div>
