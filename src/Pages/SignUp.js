@@ -14,8 +14,6 @@ const SignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
             .then(authUser => console.log('authUser', authUser))
             .catch(err => alert(err.message))
-
-
     }
     return (
         <div className={classes.root}>
