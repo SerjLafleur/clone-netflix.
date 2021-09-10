@@ -80,3 +80,11 @@ login or app conditional on the existence of a user
 -We have created a variable singIn.
 -If the variable is false, we display the form. 
 - We have styled the component.
+
+### Proceso de Registro / SignIn
+
+-Initialized an account in firebase.
+-Initializing the auth object.
+-Captured the data typed by the user.
+-Registering email and password with auth.create...
+-SignIn with auth.signIn....
