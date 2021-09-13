@@ -81,10 +81,24 @@ login or app conditional on the existence of a user
 -If the variable is false, we display the form. 
 - We have styled the component.
 
-### Proceso de Registro / SignIn
+### Registration process / SignIn
 
 -Initialized an account in firebase.
 -Initializing the auth object.
 -Captured the data typed by the user.
 -Registering email and password with auth.create...
 -SignIn with auth.signIn....
+
+### Redux
+
+-We enable the slice userSlice to manage the user in the component we want.
+
+### Persistence
+
+-We have added a state change as a firebase auth method. It listens every time the user changes in firebase.
+-Every time it changes it re-injects into the useSlice (Redux) data layer. This way we remember that we are already inside even if we refresh the page.
+
+### Requests 
+
+-Build the Row component for the genera. 
+-We have imported axios with the base url and also created requests to be able to enter the endpoints.

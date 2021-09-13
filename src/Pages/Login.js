@@ -22,7 +22,7 @@ const Login = () => {
                                 <Typography variant='h6' gutterBottom >Ready to watch? Enter your email to create or restart your membership.</Typography>
                                 <div className={classes.inputBlock}>
                                     <NetflixInput placeholder='Email Adress' />
-                                    <NetflixButton>GET STARTED</NetflixButton>
+                                    <NetflixButton wide='medium' onClick={() => setSigIn(true)}>GET STARTED</NetflixButton>
                                 </div>
                             </>
                         )

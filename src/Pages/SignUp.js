@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router';
 import { makeStyles, Typography } from '@material-ui/core';
 import { NetflixButton, NetflixInput } from '../styled/styledcomponents';
 import { auth } from '../firebase';
@@ -7,17 +8,18 @@ const SignUp = () => {
     const classes = useStyles()
     const [email, SetEmail] = useState('')
     const [password, SetPassword] = useState('')
+    const history = useHistory()
 
     const signIn = () => {
         auth.signInWithEmailAndPassword(email, password)
-            .then(authUser => console.log(authUser))
+            .then(history.push("/"))
             .catch(err => alert(err.message))
     }
 
     const register = (e) => {
         e.preventDefault();
         auth.createUserWithEmailAndPassword(email, password)
-            .then(authUser => console.log('authUser', authUser))
+            .then(history.push("/"))
             .catch(err => alert(err.message))
     }
     return (

@@ -1,12 +1,21 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 import { makeStyles, Typography } from '@material-ui/core';
 import Header from '../components/Header';
 import ImgProfile from '../img/img-profile.png'
 import Plans from '../components/Plans'
 import { NetflixButton } from '../styled/styledcomponents';
+import { auth } from '../firebase';
 
 const Profile = () => {
     const classes = useStyles()
+    const history = useHistory()
+
+    const signOut = () => {
+        auth.signOut()
+        history.push('/login')
+
+    }
     return (
         <div className={classes.root}>
             <Header />
@@ -20,7 +29,7 @@ const Profile = () => {
                         <Plans cost={7.99}>Netflix Standard</Plans>
                         <Plans cost={11.99}>Netflix Basic</Plans>
                         <Plans wide='medium' color='gray' cost={15.99}>Netflix Premium</Plans>
-                        <NetflixButton wide='fulWidth'>Sign Out</NetflixButton>
+                        <NetflixButton onClick={signOut} wide='fulWidth'>Sign Out</NetflixButton>
                     </div>
                 </div>
             </div>
