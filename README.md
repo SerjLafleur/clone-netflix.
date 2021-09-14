@@ -102,3 +102,15 @@ login or app conditional on the existence of a user
 
 -Build the Row component for the genera. 
 -We have imported axios with the base url and also created requests to be able to enter the endpoints.
+
+### Requests to the API
+
+-We have used useeffect to call all the endpoints prepared in the Row behavior. 
+-We have previously prepared the titles. 
+and deployed the UI.
+
+### Banner Component
+
+-We have returned to this component, to carry the API data, since this Banner had to give us an image, title and image randomly when we refresh the page.
+
+-We call axios again to call the Netflix originals API.

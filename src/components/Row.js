@@ -9,25 +9,36 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
     const base_url = 'https://image.tmdb.org/t/p/original';
 
-    console.log(movies)
-    useEffect(() => {
 
-        const fetchData = async () => {
-            const request = await axios.get(fetchUrl)
-            setMovies(request.data.results)
-            return request
-        }
-        fetchData()
+    useEffect(() => {
+        axios.get(fetchUrl)
+            .then(res => setMovies(res.data.results))
+
+        // const fetchData = async () => {
+        //     const request = await axios.get(fetchUrl)
+        //     setMovies(request.data.results)
+        //     return request
+        // };
+        // fetchData()
     }, [fetchUrl])
+
+    console.log('movies', movies)
     return (
         <div className={classes.root}>
             <Typography variant='h4'>{title}</Typography>
             <div className={classes.posters}>
-                {
-                    movies.map((movie) =>
-                        (isLargeRow && movie.poster_path)
+                {movies.map((movie) => (
+                    (isLargeRow && movie.poster_path) ||
+                    (!isLargeRow && movie.backdrop_path)) && (
+                        <img
+                            className={`${classes.poster} ${isLargeRow && classes.posterLarge}`}
+                            key={movie.id}
+                            src={`${base_url}${isLargeRow ? movie.poster_path : movie?.backdrop_path}`}
+                            alt={movie?.title}
 
+                        />
                     )
+                )
                 }
             </div>
         </div>
@@ -38,6 +49,29 @@ const useStyles = makeStyles((theme) => ({
     root: {
         color: '#fff',
         marginLeft: theme.spacing(4),
+    },
+    posters: {
+        display: 'flex',
+        overflowY: 'hidden',
+        overflowX: 'scroll',
+        '&:: -webkit-scrollBar': {
+            display: 'none',
+        }
+    },
+    poster: {
+        maxHeight: '12rem',
+        objectFit: 'contain',
+        marginRigth: theme.spacing(1),
+        transition: 'transform 450ms',
+        '&:hover': {
+            transform: 'scale(1.1)'
+        },
+    },
+    posterLarge: {
+        maxHeight: '15rem',
+        '&:hover': {
+            transform: 'scale(1.15)',
+        },
     },
 }))
 export default Row

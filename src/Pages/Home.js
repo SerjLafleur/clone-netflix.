@@ -1,12 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+// import { makeStyles } from '@material-ui/core';
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import Row from '../components/Row'
 import requests from '../Requests';
 
 const Home = () => {
-    const classes = useStyles()
+    // const classes = useStyles()
+
     return (
         <div>
             <Header />
@@ -21,8 +22,8 @@ const Home = () => {
         </div>
     );
 }
-const useStyles = makeStyles((theme) => ({
+// const useStyles = makeStyles((theme) => ({
 
-}))
+// }))
 
 export default Home;

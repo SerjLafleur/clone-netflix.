@@ -8,7 +8,6 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Profile from './Pages/Profile';
 import Paypal from './Pages/Paypal';
-import SignUp from './Pages/SignUp';
 
 
 
