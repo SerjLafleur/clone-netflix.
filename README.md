@@ -114,3 +114,7 @@ and deployed the UI.
 -We have returned to this component, to carry the API data, since this Banner had to give us an image, title and image randomly when we refresh the page.
 
 -We call axios again to call the Netflix originals API.
+
+### Plans Components
+
+-Created plans logic for using prices to pay with PayPal, 

@@ -1,13 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { makeStyles, Typography } from '@material-ui/core';
 import { NetflixButton } from '../styled/styledcomponents';
+import { setPrice } from '../features/counter/PriceSlice';
+import { useHistory } from 'react-router';
 
 const Plans = ({ cost, children, color, wide }) => {
     const classes = useStyles()
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const handleClick = (cost) => {
+        dispatch(setPrice(cost))
+        history.push('/checkout')
+    }
     return (
         <div className={classes.root}>
             <Typography variant="h5">{children}</Typography>
-            <NetflixButton wide={wide} color={color}>Subcribe</NetflixButton>
+            <NetflixButton wide={wide} color={color} onClick={() => handleClick(cost)}>Subcribe</NetflixButton>
         </div>
     )
 }
